@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import sys
 
-# Try to find .env file in parent directories if not in current
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(os.path.dirname(current_dir)) # roller_backend root
 env_path = os.path.join(parent_dir, '.env')
