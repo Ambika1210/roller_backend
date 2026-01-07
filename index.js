@@ -12,6 +12,7 @@ import serverConfig from './src/config/config.js';
 import chalk from './src/utils/chalk.js';
 import DatabaseConnection from './src/config/mongoWrapper.js';
 import logger from './src/utils/logger.js';
+import brollRoutes from './src/routes/broll.routes.js';
 
 let dbConnection;
 const app = express();
@@ -64,6 +65,9 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
+
+// API Routes
+app.use('/api/broll', brollRoutes);
 
 server.listen(serverConfig.PORT, () => {
   logger.info(`index.js << Server listening on port ${serverConfig.PORT}`);
